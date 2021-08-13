@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		ECF3D82226C6526100BCEF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D82126C6526100BCEF10 /* AppDelegate.swift */; };
 		ECF3D82426C6526100BCEF10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D82326C6526100BCEF10 /* SceneDelegate.swift */; };
-		ECF3D82626C6526100BCEF10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D82526C6526100BCEF10 /* ViewController.swift */; };
+		ECF3D82626C6526100BCEF10 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D82526C6526100BCEF10 /* WeatherViewController.swift */; };
 		ECF3D82926C6526100BCEF10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF3D82726C6526100BCEF10 /* Main.storyboard */; };
 		ECF3D82B26C6526200BCEF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF3D82A26C6526200BCEF10 /* Assets.xcassets */; };
 		ECF3D82E26C6526200BCEF10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF3D82C26C6526200BCEF10 /* LaunchScreen.storyboard */; };
+		ECF3D83C26C6549500BCEF10 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D83B26C6549500BCEF10 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ECF3D81E26C6526100BCEF10 /* weatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF3D82126C6526100BCEF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF3D82326C6526100BCEF10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECF3D82526C6526100BCEF10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECF3D82526C6526100BCEF10 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		ECF3D82826C6526100BCEF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECF3D82A26C6526200BCEF10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECF3D82D26C6526200BCEF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF3D82F26C6526200BCEF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECF3D83B26C6549500BCEF10 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,64 @@
 		ECF3D82026C6526100BCEF10 /* weatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				ECF3D82126C6526100BCEF10 /* AppDelegate.swift */,
-				ECF3D82326C6526100BCEF10 /* SceneDelegate.swift */,
-				ECF3D82526C6526100BCEF10 /* ViewController.swift */,
-				ECF3D82726C6526100BCEF10 /* Main.storyboard */,
+				ECF3D83926C6532A00BCEF10 /* Views */,
+				ECF3D83826C6532500BCEF10 /* Models */,
+				ECF3D83726C6531E00BCEF10 /* Controllers */,
+				ECF3D83626C6530D00BCEF10 /* NetworkManager */,
+				ECF3D83526C6530200BCEF10 /* Resources */,
+			);
+			path = weatherApp;
+			sourceTree = "<group>";
+		};
+		ECF3D83526C6530200BCEF10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3D83A26C6536200BCEF10 /* App */,
 				ECF3D82A26C6526200BCEF10 /* Assets.xcassets */,
 				ECF3D82C26C6526200BCEF10 /* LaunchScreen.storyboard */,
 				ECF3D82F26C6526200BCEF10 /* Info.plist */,
 			);
-			path = weatherApp;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ECF3D83626C6530D00BCEF10 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3D83B26C6549500BCEF10 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		ECF3D83726C6531E00BCEF10 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3D82526C6526100BCEF10 /* WeatherViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ECF3D83826C6532500BCEF10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ECF3D83926C6532A00BCEF10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3D82726C6526100BCEF10 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECF3D83A26C6536200BCEF10 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3D82126C6526100BCEF10 /* AppDelegate.swift */,
+				ECF3D82326C6526100BCEF10 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +188,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECF3D82626C6526100BCEF10 /* ViewController.swift in Sources */,
+				ECF3D83C26C6549500BCEF10 /* NetworkManager.swift in Sources */,
+				ECF3D82626C6526100BCEF10 /* WeatherViewController.swift in Sources */,
 				ECF3D82226C6526100BCEF10 /* AppDelegate.swift in Sources */,
 				ECF3D82426C6526100BCEF10 /* SceneDelegate.swift in Sources */,
 			);
@@ -288,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUMRL3MBS4;
-				INFOPLIST_FILE = weatherApp/Info.plist;
+				INFOPLIST_FILE = weatherApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUMRL3MBS4;
-				INFOPLIST_FILE = weatherApp/Info.plist;
+				INFOPLIST_FILE = weatherApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
