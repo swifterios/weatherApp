@@ -1,30 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kz1-0l-vPm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="1422"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoI-9R-UCG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1422"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ILE-Dn-2au">
+                                                <rect key="frame" x="0.0" y="50" width="414" height="190"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минск" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGZ-VM-0Sp">
+                                                        <rect key="frame" x="156.5" y="0.0" width="101.5" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Переменная облачность" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIN-rl-BDt">
+                                                        <rect key="frame" x="108.5" y="49" width="197" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJF-4r-M6c">
+                                                        <rect key="frame" x="164" y="77.5" width="86" height="112.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="94"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.22715032099999999" green="0.55529242749999996" blue="0.7628441453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ILE-Dn-2au" firstAttribute="leading" secondItem="PoI-9R-UCG" secondAttribute="leading" id="Zl1-i9-PcZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ILE-Dn-2au" secondAttribute="trailing" id="hc5-GN-vGe"/>
+                                            <constraint firstItem="ILE-Dn-2au" firstAttribute="top" secondItem="PoI-9R-UCG" secondAttribute="top" constant="50" id="puh-Ku-BMc"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PoI-9R-UCG" firstAttribute="width" secondItem="kz1-0l-vPm" secondAttribute="width" id="2Vr-iA-gkd"/>
+                                    <constraint firstItem="PoI-9R-UCG" firstAttribute="height" secondItem="kz1-0l-vPm" secondAttribute="height" priority="250" id="Hps-L6-DgQ"/>
+                                    <constraint firstItem="PoI-9R-UCG" firstAttribute="leading" secondItem="kz1-0l-vPm" secondAttribute="leading" id="IfZ-jG-NiX"/>
+                                    <constraint firstAttribute="trailing" secondItem="PoI-9R-UCG" secondAttribute="trailing" id="OOw-ev-b2s"/>
+                                    <constraint firstItem="PoI-9R-UCG" firstAttribute="top" secondItem="kz1-0l-vPm" secondAttribute="top" id="bQ4-rO-6kt"/>
+                                    <constraint firstAttribute="bottom" secondItem="PoI-9R-UCG" secondAttribute="bottom" id="wI8-nL-lv3"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.22715032099999999" green="0.55529242749999996" blue="0.7628441453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kz1-0l-vPm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8aK-Kf-o8g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kz1-0l-vPm" secondAttribute="trailing" id="D4e-nY-Kb8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kz1-0l-vPm" secondAttribute="bottom" id="gl5-GR-Z7f"/>
+                            <constraint firstItem="kz1-0l-vPm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zPb-aM-JBO"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="414" height="1500"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
