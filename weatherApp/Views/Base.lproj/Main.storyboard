@@ -44,12 +44,77 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XF-OD-vhn">
+                                                <rect key="frame" x="0.0" y="310" width="1000" height="200"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbW-gg-DGT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="992" height="186"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сейчас" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKO-LY-t3f">
+                                                                <rect key="frame" x="20" y="10" width="68" height="23"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEp-hx-ddP">
+                                                                <rect key="frame" x="118" y="10" width="20" height="23"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GJ-1q-pcb">
+                                                                <rect key="frame" x="168" y="10" width="17" height="23"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.drizzle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ihW-CM-RgX">
+                                                                <rect key="frame" x="20" y="48" width="68" height="21.5"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-oC-nss">
+                                                                <rect key="frame" x="40" y="83" width="28" height="23"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.22715032099999999" green="0.55529242749999996" blue="0.7628441453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="8GJ-1q-pcb" firstAttribute="leading" secondItem="cEp-hx-ddP" secondAttribute="trailing" constant="30" id="AD9-OB-Uou"/>
+                                                            <constraint firstItem="cEp-hx-ddP" firstAttribute="top" secondItem="PbW-gg-DGT" secondAttribute="top" constant="10" id="BEA-DK-wzL"/>
+                                                            <constraint firstItem="cEp-hx-ddP" firstAttribute="leading" secondItem="IKO-LY-t3f" secondAttribute="trailing" constant="30" id="H9a-K2-ppm"/>
+                                                            <constraint firstItem="IKO-LY-t3f" firstAttribute="leading" secondItem="PbW-gg-DGT" secondAttribute="leading" constant="20" id="HLY-56-xr5"/>
+                                                            <constraint firstItem="8GJ-1q-pcb" firstAttribute="top" secondItem="PbW-gg-DGT" secondAttribute="top" constant="10" id="JZi-4X-ZWi"/>
+                                                            <constraint firstItem="IKO-LY-t3f" firstAttribute="top" secondItem="PbW-gg-DGT" secondAttribute="top" constant="10" id="PFr-aW-dp9"/>
+                                                            <constraint firstItem="xzn-oC-nss" firstAttribute="top" secondItem="ihW-CM-RgX" secondAttribute="bottom" constant="15" id="Sfh-Y9-owD"/>
+                                                            <constraint firstItem="ihW-CM-RgX" firstAttribute="leading" secondItem="IKO-LY-t3f" secondAttribute="leading" id="gLj-he-kmz"/>
+                                                            <constraint firstItem="ihW-CM-RgX" firstAttribute="top" secondItem="IKO-LY-t3f" secondAttribute="bottom" constant="15" id="lce-G3-aSN"/>
+                                                            <constraint firstItem="xzn-oC-nss" firstAttribute="centerX" secondItem="ihW-CM-RgX" secondAttribute="centerX" id="nAW-bv-gjE"/>
+                                                            <constraint firstItem="ihW-CM-RgX" firstAttribute="centerX" secondItem="IKO-LY-t3f" secondAttribute="centerX" id="sIh-2x-QHa"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.22715032099999999" green="0.55529242749999996" blue="0.7628441453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="PbW-gg-DGT" secondAttribute="trailing" id="5Nz-Vd-CvG"/>
+                                                    <constraint firstItem="PbW-gg-DGT" firstAttribute="height" secondItem="6XF-OD-vhn" secondAttribute="height" multiplier="0.930736" id="EiB-dF-Hzz"/>
+                                                    <constraint firstItem="PbW-gg-DGT" firstAttribute="width" secondItem="6XF-OD-vhn" secondAttribute="width" multiplier="0.992" id="HfW-Ig-kly"/>
+                                                    <constraint firstAttribute="bottom" secondItem="PbW-gg-DGT" secondAttribute="bottom" id="S8b-qF-Po5"/>
+                                                    <constraint firstItem="PbW-gg-DGT" firstAttribute="leading" secondItem="6XF-OD-vhn" secondAttribute="leading" id="ePd-ue-fEA"/>
+                                                    <constraint firstItem="PbW-gg-DGT" firstAttribute="top" secondItem="6XF-OD-vhn" secondAttribute="top" id="o50-3w-8wX"/>
+                                                    <constraint firstAttribute="height" constant="200" id="oo4-7t-QbO"/>
+                                                </constraints>
+                                            </scrollView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.22715032099999999" green="0.55529242749999996" blue="0.7628441453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="ILE-Dn-2au" firstAttribute="leading" secondItem="PoI-9R-UCG" secondAttribute="leading" id="Zl1-i9-PcZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="6XF-OD-vhn" secondAttribute="trailing" id="eZR-Al-VPf"/>
                                             <constraint firstAttribute="trailing" secondItem="ILE-Dn-2au" secondAttribute="trailing" id="hc5-GN-vGe"/>
+                                            <constraint firstItem="6XF-OD-vhn" firstAttribute="leading" secondItem="PoI-9R-UCG" secondAttribute="leading" id="hyG-XJ-zNn"/>
                                             <constraint firstItem="ILE-Dn-2au" firstAttribute="top" secondItem="PoI-9R-UCG" secondAttribute="top" constant="50" id="puh-Ku-BMc"/>
+                                            <constraint firstItem="6XF-OD-vhn" firstAttribute="top" secondItem="ILE-Dn-2au" secondAttribute="bottom" constant="70" id="uzp-5q-C0c"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -79,4 +144,7 @@
             <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud.drizzle.fill" catalog="system" width="128" height="125"/>
+    </resources>
 </document>
