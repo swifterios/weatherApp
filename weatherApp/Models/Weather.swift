@@ -49,8 +49,8 @@ struct Fact: Codable {
     let feels_like: Int?
     let icon: String?
     let condition: String?
-    let cloudness: String?
-    let wind_speed: String?
+    let cloudness: Int?
+    let wind_speed: Double?
     let pressure_mm: Int?
     let pressure_pa: Int?
     let humidity: Int?
@@ -69,6 +69,6 @@ struct Hours: Codable {
     let temp: Int?
     let feels_like: Int?
     let condition: String?
-    let wind_speed: String?
+    let wind_speed: Double?
 }
 
