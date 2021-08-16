@@ -14,6 +14,7 @@
 		ECF3D82B26C6526200BCEF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF3D82A26C6526200BCEF10 /* Assets.xcassets */; };
 		ECF3D82E26C6526200BCEF10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF3D82C26C6526200BCEF10 /* LaunchScreen.storyboard */; };
 		ECF3D83C26C6549500BCEF10 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D83B26C6549500BCEF10 /* NetworkManager.swift */; };
+		ECF3D83E26CA484E00BCEF10 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D83D26CA484E00BCEF10 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ECF3D82D26C6526200BCEF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECF3D82F26C6526200BCEF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECF3D83B26C6549500BCEF10 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ECF3D83D26CA484E00BCEF10 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		ECF3D83826C6532500BCEF10 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ECF3D83D26CA484E00BCEF10 /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				ECF3D82626C6526100BCEF10 /* WeatherViewController.swift in Sources */,
 				ECF3D82226C6526100BCEF10 /* AppDelegate.swift in Sources */,
 				ECF3D82426C6526100BCEF10 /* SceneDelegate.swift in Sources */,
+				ECF3D83E26CA484E00BCEF10 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
