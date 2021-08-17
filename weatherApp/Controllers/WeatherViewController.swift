@@ -31,7 +31,7 @@ class WeatherViewController: UIViewController {
             switch result {
             case .success(let model):
                 self?.weatherData = model
-                self?.updateHoursLabels()
+                self?.updateHoursHourWeather()
             case .failure(let error):
                 print(error)
             }
@@ -41,7 +41,7 @@ class WeatherViewController: UIViewController {
     
     //MARK: - Update UI
     
-    func updateHoursLabels() {
+    func updateHoursHourWeather() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {
                 return
@@ -61,7 +61,7 @@ class WeatherViewController: UIViewController {
             
             for index in 0...23 {
 
-                if currentHour >= 22 {
+                if currentHour >= 24 {
                     currentHour = 0
                     currentDay += 1
                 }
@@ -78,53 +78,29 @@ class WeatherViewController: UIViewController {
                 }
                 
                 // Update image
-                var weather = weatherData.forecasts![currentDay].hours![currentHour].condition
+                let weather = weatherData.forecasts![currentDay].hours![currentHour].condition
                 
                 switch weather {
-                
                 case "clear":
                     self.weatherImages[index].image = UIImage(systemName: "sun.max.fill")
-                case "partly-cloudy":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.sun.fill")
-                case "cloudy":
+                case "partly-cloudy", "cloudy":
                     self.weatherImages[index].image = UIImage(systemName: "cloud.sun.fill")
                 case "overcast":
                     self.weatherImages[index].image = UIImage(systemName: "smoke.fill")
-                case "drizzle":
+                case "drizzle", "light-rain", "rain", "moderate-rain":
                     self.weatherImages[index].image = UIImage(systemName: "cloud.rain.fill")
-                case "light-rain":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.rain.fill")
-                case "rain":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.rain.fill")
-                case "moderate-rain":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.rain.fill")
-                case "heavy-rain":
+                case "heavy-rain", "continuous-heavy-rain", "showers":
                     self.weatherImages[index].image = UIImage(systemName: "cloud.heavyrain.fill")
-                case "continuous-heavy-rain":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.heavyrain.fill")
-                case "showers":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.heavyrain.fill")
-                case "wet-snow":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.snow.fill")
-                case "light-snow":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.snow.fill")
-                case "snow":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.snow.fill")
-                case "snow-showers":
+                case "wet-snow", "light-snow", "snow", "snow-showers":
                     self.weatherImages[index].image = UIImage(systemName: "cloud.snow.fill")
                 case "hail":
                     self.weatherImages[index].image = UIImage(systemName: "cloud.hail.fill")
-                case "thunderstorm":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.bolt.rain.fill")
-                case "thunderstorm-with-rain":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.bolt.rain.fill")
-                case "thunderstorm-with-hail":
+                case "thunderstorm", "thunderstorm-with-rain", "thunderstorm-with-hail":
                     self.weatherImages[index].image = UIImage(systemName: "cloud.bolt.rain.fill")
                 default:
                     self.weatherImages[index].image = UIImage(systemName: "sun.max.fill")
                 }
                 currentHour += 1
-                
             }
         }
     }
