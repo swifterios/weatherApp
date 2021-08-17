@@ -62,17 +62,27 @@ class WeatherViewController: UIViewController {
             var currentDay = 0
             
             for index in 0...23 {
+
+                if currentHour >= 22 {
+                    currentHour = 0
+                    currentDay += 1
+                }
+                
+                guard let temp = weatherData.forecasts![currentDay].hours![currentHour].temp else {
+                    return
+                }
+                
+                self.hoursLabels[index].text = weatherData.forecasts![currentDay].hours![currentHour].hour
+                self.tempLabels[index].text = String(temp)
+                
                 if index == 0 {
                     self.hoursLabels[index].text = "Сейчас"
-                } else {
-                    if currentHour >= 22 {
-                        currentHour = 0
-                        currentDay += 1
-                    }
-                    self.hoursLabels[index].text = weatherData.forecasts![currentDay].hours![currentHour].hour
-                    currentHour += 1
                 }
+                
+                currentHour += 1
+                
             }
+            
                 
             
         }
