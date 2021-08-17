@@ -17,6 +17,9 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet var weatherImages: [UIImageView]!
     
+    @IBOutlet var tempLabels: [UILabel]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

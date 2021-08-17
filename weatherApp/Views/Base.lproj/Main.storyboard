@@ -686,6 +686,30 @@
                         <outletCollection property="weatherImages" destination="p15-yd-DlJ" collectionClass="NSMutableArray" id="dhg-Nr-EMl"/>
                         <outletCollection property="weatherImages" destination="nsS-ki-42v" collectionClass="NSMutableArray" id="Cji-wz-MoQ"/>
                         <outletCollection property="weatherImages" destination="fLm-yy-c6z" collectionClass="NSMutableArray" id="EEC-Mf-Ro4"/>
+                        <outletCollection property="tempLabels" destination="xzn-oC-nss" collectionClass="NSMutableArray" id="Dd1-aI-bnQ"/>
+                        <outletCollection property="tempLabels" destination="OKs-kZ-0dR" collectionClass="NSMutableArray" id="sF1-sz-2J3"/>
+                        <outletCollection property="tempLabels" destination="HZd-LD-cjq" collectionClass="NSMutableArray" id="XaJ-Ud-051"/>
+                        <outletCollection property="tempLabels" destination="2HM-2p-dgn" collectionClass="NSMutableArray" id="wXl-Ws-PMs"/>
+                        <outletCollection property="tempLabels" destination="qXc-Xv-rRc" collectionClass="NSMutableArray" id="BNN-k5-5L4"/>
+                        <outletCollection property="tempLabels" destination="BSn-LK-iYa" collectionClass="NSMutableArray" id="0HT-SK-snI"/>
+                        <outletCollection property="tempLabels" destination="gEK-zk-68S" collectionClass="NSMutableArray" id="7tn-gs-YHb"/>
+                        <outletCollection property="tempLabels" destination="V9q-tC-NBJ" collectionClass="NSMutableArray" id="Lbd-7h-eEI"/>
+                        <outletCollection property="tempLabels" destination="12s-Ga-tUO" collectionClass="NSMutableArray" id="wMB-yX-TaB"/>
+                        <outletCollection property="tempLabels" destination="n0s-TW-QaS" collectionClass="NSMutableArray" id="P0A-ZP-u7h"/>
+                        <outletCollection property="tempLabels" destination="QEX-U6-vzw" collectionClass="NSMutableArray" id="NDe-fK-NaA"/>
+                        <outletCollection property="tempLabels" destination="tec-RJ-DiP" collectionClass="NSMutableArray" id="X1K-Za-tL8"/>
+                        <outletCollection property="tempLabels" destination="GzU-ge-MWe" collectionClass="NSMutableArray" id="dsI-JM-gbW"/>
+                        <outletCollection property="tempLabels" destination="2qv-mA-VZ0" collectionClass="NSMutableArray" id="hqk-15-vgI"/>
+                        <outletCollection property="tempLabels" destination="mS1-wx-95v" collectionClass="NSMutableArray" id="rwE-gB-0iN"/>
+                        <outletCollection property="tempLabels" destination="y7V-Il-Ifa" collectionClass="NSMutableArray" id="AIX-nT-xOW"/>
+                        <outletCollection property="tempLabels" destination="sgr-GF-p5I" collectionClass="NSMutableArray" id="vWr-hm-DtJ"/>
+                        <outletCollection property="tempLabels" destination="hNQ-II-yAn" collectionClass="NSMutableArray" id="yMw-FA-7xC"/>
+                        <outletCollection property="tempLabels" destination="Clh-iF-c96" collectionClass="NSMutableArray" id="lzF-pr-lcY"/>
+                        <outletCollection property="tempLabels" destination="xj1-ay-a20" collectionClass="NSMutableArray" id="zgH-Ii-qvi"/>
+                        <outletCollection property="tempLabels" destination="i2V-7N-8f1" collectionClass="NSMutableArray" id="n90-pd-EP0"/>
+                        <outletCollection property="tempLabels" destination="4nj-gg-tMP" collectionClass="NSMutableArray" id="Qf5-Ll-2Zj"/>
+                        <outletCollection property="tempLabels" destination="7bb-RT-SvU" collectionClass="NSMutableArray" id="05v-ZE-SyH"/>
+                        <outletCollection property="tempLabels" destination="TvS-Ye-X1a" collectionClass="NSMutableArray" id="g7Z-ng-THK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
