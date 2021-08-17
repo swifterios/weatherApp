@@ -62,8 +62,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.drizzle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ihW-CM-RgX">
-                                                                <rect key="frame" x="20" y="48" width="68" height="21.5"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.bolt.rain.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ihW-CM-RgX">
+                                                                <rect key="frame" x="20" y="48.5" width="68" height="22"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-oC-nss">
@@ -662,30 +662,6 @@
                         <outletCollection property="hoursLabels" destination="22f-B2-iUD" collectionClass="NSMutableArray" id="Y8l-vo-gEO"/>
                         <outletCollection property="hoursLabels" destination="beK-cc-MRb" collectionClass="NSMutableArray" id="ImT-oY-XkL"/>
                         <outletCollection property="hoursLabels" destination="eah-b8-4LG" collectionClass="NSMutableArray" id="gTe-M3-N1A"/>
-                        <outletCollection property="weatherImages" destination="ihW-CM-RgX" collectionClass="NSMutableArray" id="88Z-Od-OZa"/>
-                        <outletCollection property="weatherImages" destination="v69-ig-DYi" collectionClass="NSMutableArray" id="xg9-eM-Bdg"/>
-                        <outletCollection property="weatherImages" destination="YKK-G8-Kfy" collectionClass="NSMutableArray" id="IDS-VK-DHe"/>
-                        <outletCollection property="weatherImages" destination="vlH-OS-zmg" collectionClass="NSMutableArray" id="Jmy-ET-vxY"/>
-                        <outletCollection property="weatherImages" destination="ulo-nY-pL1" collectionClass="NSMutableArray" id="Uro-fL-Hg2"/>
-                        <outletCollection property="weatherImages" destination="nH1-lt-fy0" collectionClass="NSMutableArray" id="sp1-eP-3gC"/>
-                        <outletCollection property="weatherImages" destination="JFe-do-Xme" collectionClass="NSMutableArray" id="z65-zz-luZ"/>
-                        <outletCollection property="weatherImages" destination="aNs-99-Aif" collectionClass="NSMutableArray" id="6Sk-9Z-mYN"/>
-                        <outletCollection property="weatherImages" destination="K24-lT-ZRc" collectionClass="NSMutableArray" id="9uz-Bf-KJk"/>
-                        <outletCollection property="weatherImages" destination="LXo-h5-cNJ" collectionClass="NSMutableArray" id="S2O-S3-HnI"/>
-                        <outletCollection property="weatherImages" destination="chK-Sf-DLy" collectionClass="NSMutableArray" id="C9d-TF-APO"/>
-                        <outletCollection property="weatherImages" destination="21w-8P-PWE" collectionClass="NSMutableArray" id="PfI-cu-9T3"/>
-                        <outletCollection property="weatherImages" destination="PJ5-yv-0Um" collectionClass="NSMutableArray" id="8Db-T0-rTb"/>
-                        <outletCollection property="weatherImages" destination="Cg3-Jm-jhX" collectionClass="NSMutableArray" id="9jU-t9-Tms"/>
-                        <outletCollection property="weatherImages" destination="EgR-gy-d9E" collectionClass="NSMutableArray" id="137-3j-zzn"/>
-                        <outletCollection property="weatherImages" destination="4Zm-7J-i4q" collectionClass="NSMutableArray" id="sg0-2j-STT"/>
-                        <outletCollection property="weatherImages" destination="SbD-hc-pEq" collectionClass="NSMutableArray" id="jIJ-ew-UE0"/>
-                        <outletCollection property="weatherImages" destination="kwu-Ch-byV" collectionClass="NSMutableArray" id="bwd-Ak-4QG"/>
-                        <outletCollection property="weatherImages" destination="pIz-La-k0d" collectionClass="NSMutableArray" id="9oo-dY-Yue"/>
-                        <outletCollection property="weatherImages" destination="9oo-by-S5h" collectionClass="NSMutableArray" id="YK4-VJ-kxY"/>
-                        <outletCollection property="weatherImages" destination="zOq-Xw-mJm" collectionClass="NSMutableArray" id="Bsw-kd-yws"/>
-                        <outletCollection property="weatherImages" destination="p15-yd-DlJ" collectionClass="NSMutableArray" id="dhg-Nr-EMl"/>
-                        <outletCollection property="weatherImages" destination="nsS-ki-42v" collectionClass="NSMutableArray" id="Cji-wz-MoQ"/>
-                        <outletCollection property="weatherImages" destination="fLm-yy-c6z" collectionClass="NSMutableArray" id="EEC-Mf-Ro4"/>
                         <outletCollection property="tempLabels" destination="xzn-oC-nss" collectionClass="NSMutableArray" id="Dd1-aI-bnQ"/>
                         <outletCollection property="tempLabels" destination="OKs-kZ-0dR" collectionClass="NSMutableArray" id="sF1-sz-2J3"/>
                         <outletCollection property="tempLabels" destination="HZd-LD-cjq" collectionClass="NSMutableArray" id="XaJ-Ud-051"/>
@@ -710,6 +686,30 @@
                         <outletCollection property="tempLabels" destination="4nj-gg-tMP" collectionClass="NSMutableArray" id="Qf5-Ll-2Zj"/>
                         <outletCollection property="tempLabels" destination="7bb-RT-SvU" collectionClass="NSMutableArray" id="05v-ZE-SyH"/>
                         <outletCollection property="tempLabels" destination="TvS-Ye-X1a" collectionClass="NSMutableArray" id="g7Z-ng-THK"/>
+                        <outletCollection property="weatherImages" destination="ihW-CM-RgX" collectionClass="NSMutableArray" id="wtS-AQ-U6q"/>
+                        <outletCollection property="weatherImages" destination="v69-ig-DYi" collectionClass="NSMutableArray" id="brz-2g-okj"/>
+                        <outletCollection property="weatherImages" destination="YKK-G8-Kfy" collectionClass="NSMutableArray" id="eNq-H9-nW1"/>
+                        <outletCollection property="weatherImages" destination="vlH-OS-zmg" collectionClass="NSMutableArray" id="fDe-nW-quB"/>
+                        <outletCollection property="weatherImages" destination="ulo-nY-pL1" collectionClass="NSMutableArray" id="82g-2b-Xzw"/>
+                        <outletCollection property="weatherImages" destination="nH1-lt-fy0" collectionClass="NSMutableArray" id="ZOT-C2-lfl"/>
+                        <outletCollection property="weatherImages" destination="JFe-do-Xme" collectionClass="NSMutableArray" id="eI0-ze-H2V"/>
+                        <outletCollection property="weatherImages" destination="aNs-99-Aif" collectionClass="NSMutableArray" id="aNu-MQ-U36"/>
+                        <outletCollection property="weatherImages" destination="K24-lT-ZRc" collectionClass="NSMutableArray" id="Jir-VU-1lq"/>
+                        <outletCollection property="weatherImages" destination="LXo-h5-cNJ" collectionClass="NSMutableArray" id="qhr-UW-0Vn"/>
+                        <outletCollection property="weatherImages" destination="chK-Sf-DLy" collectionClass="NSMutableArray" id="8vh-T4-evA"/>
+                        <outletCollection property="weatherImages" destination="21w-8P-PWE" collectionClass="NSMutableArray" id="7Gr-BL-A9p"/>
+                        <outletCollection property="weatherImages" destination="zjV-4n-TUi" collectionClass="NSMutableArray" id="yqD-c9-Nhf"/>
+                        <outletCollection property="weatherImages" destination="Cg3-Jm-jhX" collectionClass="NSMutableArray" id="LIS-dF-q88"/>
+                        <outletCollection property="weatherImages" destination="EgR-gy-d9E" collectionClass="NSMutableArray" id="rQg-kP-pzd"/>
+                        <outletCollection property="weatherImages" destination="4Zm-7J-i4q" collectionClass="NSMutableArray" id="b3D-Qb-yez"/>
+                        <outletCollection property="weatherImages" destination="SbD-hc-pEq" collectionClass="NSMutableArray" id="qAz-GC-e3f"/>
+                        <outletCollection property="weatherImages" destination="kwu-Ch-byV" collectionClass="NSMutableArray" id="CyF-9P-ZYv"/>
+                        <outletCollection property="weatherImages" destination="pIz-La-k0d" collectionClass="NSMutableArray" id="L1C-m9-0NW"/>
+                        <outletCollection property="weatherImages" destination="9oo-by-S5h" collectionClass="NSMutableArray" id="cvE-qK-rh1"/>
+                        <outletCollection property="weatherImages" destination="zOq-Xw-mJm" collectionClass="NSMutableArray" id="kwu-uj-dwt"/>
+                        <outletCollection property="weatherImages" destination="p15-yd-DlJ" collectionClass="NSMutableArray" id="BME-fK-0hu"/>
+                        <outletCollection property="weatherImages" destination="nsS-ki-42v" collectionClass="NSMutableArray" id="T5A-59-H5V"/>
+                        <outletCollection property="weatherImages" destination="fLm-yy-c6z" collectionClass="NSMutableArray" id="39Y-B9-AKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -718,6 +718,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cloud.bolt.rain.fill" catalog="system" width="128" height="128"/>
         <image name="cloud.drizzle.fill" catalog="system" width="128" height="125"/>
     </resources>
 </document>
