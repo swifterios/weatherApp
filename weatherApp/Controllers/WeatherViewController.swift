@@ -59,17 +59,38 @@ class WeatherViewController: UIViewController {
             }()
             var currentDay = 0
             
+            guard var sunrise = weatherData.forecasts![currentDay].sunrise else {
+                return
+            }
+            
+            guard var sunset = weatherData.forecasts![currentDay].sunset else {
+                return
+            }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            
+
+            
             for index in 0...23 {
 
+                let sunriseDate = dateFormatter.date(from: sunrise)
+                let sunriseHour = calendar.component(.hour, from: sunriseDate!)
+                
+                let sunsetDate = dateFormatter.date(from: sunset)
+                let sunsetHour = calendar.component(.hour, from: sunsetDate!)
+                
                 if currentHour >= 24 {
                     currentHour = 0
                     currentDay += 1
+                    sunrise = weatherData.forecasts![currentDay].sunrise!
+                    sunset = weatherData.forecasts![currentDay].sunset!
                 }
                 
                 guard let temp = weatherData.forecasts![currentDay].hours![currentHour].temp else {
                     return
                 }
-                
+                    
                 self.hoursLabels[index].text = weatherData.forecasts![currentDay].hours![currentHour].hour
                 self.tempLabels[index].text = String(temp)
                 
@@ -99,6 +120,20 @@ class WeatherViewController: UIViewController {
                     self.weatherImages[index].image = UIImage(systemName: "cloud.bolt.rain.fill")
                 default:
                     self.weatherImages[index].image = UIImage(systemName: "sun.max.fill")
+                }
+                
+                if currentHour == sunriseHour {
+                    self.hoursLabels[index + 1].text = sunrise
+                    self.weatherImages[index + 1].image = UIImage(systemName: "sunrise.fill")
+                    self.tempLabels[index + 1].text = "Восход солнца"
+                    currentHour += 1
+                }
+                
+                if currentHour == sunsetHour {
+                    self.hoursLabels[index + 1].text = sunset
+                    self.weatherImages[index + 1].image = UIImage(systemName: "sunset.fill")
+                    self.tempLabels[index + 1].text = "Заход солнца"
+                    currentHour += 1
                 }
                 currentHour += 1
             }
