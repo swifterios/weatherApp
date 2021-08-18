@@ -133,7 +133,7 @@ class WeatherViewController: UIViewController {
                 }
                     
                 self.hoursLabels[index].text = weatherData.forecasts![currentDay].hours![currentHour].hour
-                self.tempLabels[index].text = String(temp)
+                self.tempLabels[index].text = String(temp) + "°"
                 
                 if index == 0 {
                     self.hoursLabels[index].text = "Сейчас"
@@ -195,8 +195,8 @@ class WeatherViewController: UIViewController {
                 
                 // Update temp
                 
-                self.daysDayTemp[index].text = String(weatherData.forecasts![index].parts!.day!.temp_avg!)
-                self.daysNightTemp[index].text = String(weatherData.forecasts![index].parts!.night!.temp_avg!)
+                self.daysDayTemp[index].text = String(weatherData.forecasts![index].parts!.day!.temp_avg!) + "°"
+                self.daysNightTemp[index].text = String(weatherData.forecasts![index].parts!.night!.temp_avg!) + "°"
                 
                 // Update weather image
                 
@@ -215,17 +215,17 @@ class WeatherViewController: UIViewController {
                 return
             }
             
-            guard let weatherData = self.weatherData?.forecasts else {
+            guard let weatherData = self.weatherData else {
                 return
             }
             
-            self.sunriseLabel.text = weatherData[0].sunrise
-            self.sunsetLabel.text = weatherData[0].sunset
-            self.humidityLabel.text = String(weatherData[0].parts!.day!.humidity!) + "%"
-            self.windSpeedLabel.text = String(weatherData[0].parts!.day!.wind_speed!) + " м/c"
-            self.feelLikeLabel.text = String(weatherData[0].parts!.day!.feels_like!) + "°"
-            self.fallLabel.text = String(weatherData[0].parts!.day!.prec_mm!) + " мм"
-            self.pressureLabel.text = String(weatherData[0].parts!.day!.pressure_mm!) + " мм рт.ст"
+            self.sunriseLabel.text = weatherData.forecasts![0].sunrise
+            self.sunsetLabel.text = weatherData.forecasts![0].sunset
+            self.humidityLabel.text = String(weatherData.fact!.humidity!) + "%"
+            self.windSpeedLabel.text = String(weatherData.fact!.wind_speed!) + " м/c"
+            self.feelLikeLabel.text = String(weatherData.fact!.feels_like!) + "°"
+            self.fallLabel.text = String(weatherData.forecasts![0].parts!.day!.prec_mm!) + " мм"
+            self.pressureLabel.text = String(weatherData.fact!.pressure_mm!) + " мм рт.ст"
         }
     }
     
