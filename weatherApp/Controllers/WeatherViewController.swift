@@ -133,7 +133,6 @@ class WeatherViewController: UIViewController {
                     self.hoursLabels[next].text = sunrise
                     self.weatherImages[next].image = UIImage(systemName: "sunrise.fill")
                     self.tempLabels[next].text = "Восход солнца"
-                    
                     skip = true
                 }
                 
@@ -142,7 +141,9 @@ class WeatherViewController: UIViewController {
                     self.hoursLabels[next].text = sunset
                     self.weatherImages[next].image = UIImage(systemName: "sunset.fill")
                     self.tempLabels[next].text = "Заход солнца"
-                
+                    
+                    self.hoursLabels[next].translatesAutoresizingMaskIntoConstraints = false
+                    
                     skip = true
                 }
                 currentHour += 1
