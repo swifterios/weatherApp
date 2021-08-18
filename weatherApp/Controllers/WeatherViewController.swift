@@ -72,7 +72,7 @@ class WeatherViewController: UIViewController {
             
             var skip = false
             
-            for var index in 0...23 {
+            for index in 0...25 {
 
                 if skip {
                     skip = false
@@ -86,7 +86,6 @@ class WeatherViewController: UIViewController {
                 let sunsetHour = calendar.component(.hour, from: sunsetDate!)
                 
                 if currentHour >= 24 {
-                    print(currentHour)
                     currentHour = 0
                     currentDay += 1
                     sunrise = weatherData.forecasts![currentDay].sunrise!
@@ -141,9 +140,6 @@ class WeatherViewController: UIViewController {
                     self.hoursLabels[next].text = sunset
                     self.weatherImages[next].image = UIImage(systemName: "sunset.fill")
                     self.tempLabels[next].text = "Заход солнца"
-                    
-                    self.hoursLabels[next].translatesAutoresizingMaskIntoConstraints = false
-                    
                     skip = true
                 }
                 currentHour += 1
