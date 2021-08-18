@@ -82,4 +82,5 @@ struct DayPart: Codable {
     let temp_min: Int?
     let temp_avg: Int?
     let temp_max: Int?
+    let condition: String?
 }

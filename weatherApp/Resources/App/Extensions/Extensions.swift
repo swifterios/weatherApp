@@ -15,4 +15,12 @@ extension String {
     mutating func capitalizeFirstLetter() {
       self = self.capitalizingFirstLetter()
     }
+    
+    func removeMinus() -> String {
+        return self.replacingOccurrences(of: "_", with: "")
+    }
+    
+    mutating func removeMinus() {
+      self = self.removeMinus()
+    }
 }

@@ -22,7 +22,22 @@ class WeatherViewController: UIViewController {
     @IBOutlet var daysDayTemp: [UILabel]!
     @IBOutlet var daysNightTemp: [UILabel]!
     
+    //MARK: - Enums
     
+    enum WeatherType: String, CaseIterable {
+        case clear = "sun.max.fill"
+        case partlycloudy, cloudy = "cloud.sun.fill"
+        case overcast = "smoke.fill"
+        case drizzle, lightrain, rain, moderaterain = "cloud.rain.fill"
+        case heavyrain, continuousheavyrain, showers = "cloud.heavyrain.fill"
+        case wetsnow, lightsnow, snow, snowshowers = "cloud.snow.fill"
+        case hail = "cloud.hail.fill"
+        case thunderstorm, thunderstormwithrain, thunderstormwithhail = "cloud.bolt.rain.fill"
+        
+        var image: UIImage? {
+            return UIImage(systemName: rawValue)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,28 +126,12 @@ class WeatherViewController: UIViewController {
                 }
                 
                 // Update image
-                let weather = weatherData.forecasts![currentDay].hours![currentHour].condition
-                
-                switch weather {
-                case "clear":
-                    self.weatherImages[index].image = UIImage(systemName: "sun.max.fill")
-                case "partly-cloudy", "cloudy":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.sun.fill")
-                case "overcast":
-                    self.weatherImages[index].image = UIImage(systemName: "smoke.fill")
-                case "drizzle", "light-rain", "rain", "moderate-rain":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.rain.fill")
-                case "heavy-rain", "continuous-heavy-rain", "showers":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.heavyrain.fill")
-                case "wet-snow", "light-snow", "snow", "snow-showers":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.snow.fill")
-                case "hail":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.hail.fill")
-                case "thunderstorm", "thunderstorm-with-rain", "thunderstorm-with-hail":
-                    self.weatherImages[index].image = UIImage(systemName: "cloud.bolt.rain.fill")
-                default:
-                    self.weatherImages[index].image = UIImage(systemName: "sun.max.fill")
+                guard let weather = weatherData.forecasts![currentDay].hours![currentHour].condition else {
+                    return
                 }
+                
+                self.weatherImages[index].image = self.getImageByWeather(weatherName: weather)
+                
                 
                 if currentHour == sunriseHour {
                     let next = index + 1
@@ -184,7 +183,38 @@ class WeatherViewController: UIViewController {
                 
                 self.daysDayTemp[index].text = String(weatherData.forecasts![index].parts!.day!.temp_avg!)
                 self.daysNightTemp[index].text = String(weatherData.forecasts![index].parts!.night!.temp_avg!)
+                
+                // Update weather image
+                
+                guard let weather = weatherData.forecasts![index].parts!.day!.condition else {
+                    return
+                }
+                
+                self.daysWeather[index].image = self.getImageByWeather(weatherName: weather)
             }
+        }
+    }
+    
+    func getImageByWeather(weatherName: String) -> UIImage {
+        switch weatherName {
+        case "clear":
+            return UIImage(systemName: "sun.max.fill")!
+        case "partly-cloudy", "cloudy":
+            return UIImage(systemName: "cloud.sun.fill")!
+        case "overcast":
+            return UIImage(systemName: "smoke.fill")!
+        case "drizzle", "light-rain", "rain", "moderate-rain":
+            return UIImage(systemName: "cloud.rain.fill")!
+        case "heavy-rain", "continuous-heavy-rain", "showers":
+            return UIImage(systemName: "cloud.heavyrain.fill")!
+        case "wet-snow", "light-snow", "snow", "snow-showers":
+            return UIImage(systemName: "cloud.snow.fill")!
+        case "hail":
+            return UIImage(systemName: "cloud.hail.fill")!
+        case "thunderstorm", "thunderstorm-with-rain", "thunderstorm-with-hail":
+            return UIImage(systemName: "cloud.bolt.rain.fill")!
+        default:
+            return UIImage(systemName: "sun.max.fill")!
         }
     }
 }
