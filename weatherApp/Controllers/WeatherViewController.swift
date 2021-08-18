@@ -166,10 +166,9 @@ class WeatherViewController: UIViewController {
             }
             
 
-            
-            var daysTitles: [String] = []
-            
             for index in 0...6 {
+                // Update day
+                
                 let dateString = weatherData.forecasts![index].date
                 let dateFormatter = DateFormatter()
                 dateFormatter.locale = Locale(identifier: "ru_RU")
@@ -178,8 +177,12 @@ class WeatherViewController: UIViewController {
                 dateFormatter.dateFormat = "EEEE"
                 
                 let day = dateFormatter.string(from: date!).capitalizingFirstLetter()
-                daysTitles.append(day)
+                
                 self.daysLabels[index].text = day
+                
+                // Update temp
+                
+                //self.daysDayTemp[index].text = weatherData.forecasts[index].
             }
         }
     }
