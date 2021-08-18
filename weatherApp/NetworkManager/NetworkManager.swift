@@ -17,13 +17,13 @@ final class NetworkManager {
         static let apiKey = "c3549142-e067-4afe-976c-dd68c446f656"
     }
     
-    public func getWeather(completion: @escaping (Result<Weather, Error>) -> Void) {
+    public func getWeather(lat: String, lon: String ,completion: @escaping (Result<Weather, Error>) -> Void) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = Constants.host
         urlComponents.path = Constants.apiPath
-        urlComponents.queryItems = [URLQueryItem(name: "lat", value: "50"),
-                                    URLQueryItem(name: "lon", value: "50"),
+        urlComponents.queryItems = [URLQueryItem(name: "lat", value: lat),
+                                    URLQueryItem(name: "lon", value: lon),
                                     URLQueryItem(name: "lang", value: "ru_RU"),
                                     URLQueryItem(name: "extra", value: "true"),
                                     URLQueryItem(name: "limit", value: "7")]

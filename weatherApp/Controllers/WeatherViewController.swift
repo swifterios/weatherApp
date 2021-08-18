@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
     
@@ -37,13 +38,33 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getWeather()
+        getUserLocation()
+    }
+    
+    func getUserLocation() {
+        let manager = CLLocationManager()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch manager.authorizationStatus {
+            case .restricted, .denied:
+                print("denied")
+                return
+            default:
+                guard let currentLocation = manager.location else {
+                    return
+                }
+                let lat = String(currentLocation.coordinate.latitude)
+                let lon = String(currentLocation.coordinate.longitude)
+                
+                getWeather(lat: lat, lon: lon)
+            }
+        }
     }
 
     //MARK: - Using api
     
-    func getWeather() {
-        NetworkManager.shared.getWeather { [weak self] result in
+    func getWeather(lat: String, lon: String) {
+        NetworkManager.shared.getWeather(lat: lat, lon: lon) { [weak self] result in
             switch result {
             case .success(let model):
                 self?.weatherData = model
