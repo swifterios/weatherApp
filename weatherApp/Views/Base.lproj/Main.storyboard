@@ -25,8 +25,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ILE-Dn-2au">
                                                 <rect key="frame" x="0.0" y="50" width="1400" height="190"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минск" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGZ-VM-0Sp">
-                                                        <rect key="frame" x="649.5" y="0.0" width="101.5" height="41"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минск" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGZ-VM-0Sp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1400" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -44,6 +44,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="sGZ-VM-0Sp" firstAttribute="leading" secondItem="ILE-Dn-2au" secondAttribute="leading" id="5or-F0-ROP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sGZ-VM-0Sp" secondAttribute="trailing" id="Xgc-xL-CCQ"/>
+                                                </constraints>
                                             </stackView>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XF-OD-vhn">
                                                 <rect key="frame" x="0.0" y="310" width="1400" height="150"/>
@@ -1075,6 +1079,9 @@
                     </view>
                     <size key="freeformSize" width="1400" height="1700"/>
                     <connections>
+                        <outlet property="countryLabel" destination="sGZ-VM-0Sp" id="SHC-E7-vUA"/>
+                        <outlet property="currentTemp" destination="UJF-4r-M6c" id="fAb-fP-RiM"/>
+                        <outlet property="currentWeatherLabel" destination="SIN-rl-BDt" id="5vu-k3-nMh"/>
                         <outlet property="fallLabel" destination="h1y-7i-5lc" id="Xql-RX-wPG"/>
                         <outlet property="feelLikeLabel" destination="YZF-9H-lTz" id="VxC-ol-mEV"/>
                         <outlet property="humidityLabel" destination="zcz-C8-F59" id="EXu-4G-BZ3"/>
