@@ -22,22 +22,13 @@ class WeatherViewController: UIViewController {
     @IBOutlet var daysDayTemp: [UILabel]!
     @IBOutlet var daysNightTemp: [UILabel]!
     
-    //MARK: - Enums
-    
-    enum WeatherType: String, CaseIterable {
-        case clear = "sun.max.fill"
-        case partlycloudy, cloudy = "cloud.sun.fill"
-        case overcast = "smoke.fill"
-        case drizzle, lightrain, rain, moderaterain = "cloud.rain.fill"
-        case heavyrain, continuousheavyrain, showers = "cloud.heavyrain.fill"
-        case wetsnow, lightsnow, snow, snowshowers = "cloud.snow.fill"
-        case hail = "cloud.hail.fill"
-        case thunderstorm, thunderstormwithrain, thunderstormwithhail = "cloud.bolt.rain.fill"
-        
-        var image: UIImage? {
-            return UIImage(systemName: rawValue)
-        }
-    }
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunsetLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var feelLikeLabel: UILabel!
+    @IBOutlet weak var fallLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +45,7 @@ class WeatherViewController: UIViewController {
                 self?.weatherData = model
                 self?.updateHoursHourWeather()
                 self?.updateWeatherByDay()
+                self?.updateInfoDay()
             case .failure(let error):
                 print(error)
             }
@@ -195,6 +187,26 @@ class WeatherViewController: UIViewController {
         }
     }
     
+    func updateInfoDay() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            guard let weatherData = self.weatherData?.forecasts else {
+                return
+            }
+            
+            self.sunriseLabel.text = weatherData[0].sunrise
+            self.sunsetLabel.text = weatherData[0].sunset
+            self.humidityLabel.text = String(weatherData[0].parts!.day!.humidity!) + "%"
+            self.windSpeedLabel.text = String(weatherData[0].parts!.day!.wind_speed!) + " м/c"
+            self.feelLikeLabel.text = String(weatherData[0].parts!.day!.feels_like!) + "°"
+            self.fallLabel.text = String(weatherData[0].parts!.day!.prec_mm!) + " мм"
+            self.pressureLabel.text = String(weatherData[0].parts!.day!.pressure_mm!) + " мм рт.ст"
+        }
+    }
+    
     func getImageByWeather(weatherName: String) -> UIImage {
         switch weatherName {
         case "clear":
@@ -217,5 +229,6 @@ class WeatherViewController: UIViewController {
             return UIImage(systemName: "sun.max.fill")!
         }
     }
+    
 }
 

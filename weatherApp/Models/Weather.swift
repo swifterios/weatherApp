@@ -83,4 +83,9 @@ struct DayPart: Codable {
     let temp_avg: Int?
     let temp_max: Int?
     let condition: String?
+    let pressure_mm: Int?
+    let wind_speed: Double?
+    let feels_like: Int?
+    let prec_mm: Int?
+    let humidity: Int?
 }
