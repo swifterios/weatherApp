@@ -182,7 +182,8 @@ class WeatherViewController: UIViewController {
                 
                 // Update temp
                 
-                //self.daysDayTemp[index].text = weatherData.forecasts[index].
+                self.daysDayTemp[index].text = String(weatherData.forecasts![index].parts!.day!.temp_avg!)
+                self.daysNightTemp[index].text = String(weatherData.forecasts![index].parts!.night!.temp_avg!)
             }
         }
     }

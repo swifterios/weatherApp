@@ -62,7 +62,7 @@ struct Forecasts: Codable {
     let sunrise: String?
     let sunset: String?
     let hours: [Hours]?
-    let parts: [Parts]?
+    let parts: Parts?
 }
 
 struct Hours: Codable {
@@ -74,6 +74,11 @@ struct Hours: Codable {
 }
 
 struct Parts: Codable {
+    let day: DayPart?
+    let night: DayPart?
+}
+
+struct DayPart: Codable {
     let temp_min: Int?
     let temp_avg: Int?
     let temp_max: Int?
