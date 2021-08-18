@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC94F76726CD47A40085DEA5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94F76626CD47A40085DEA5 /* Extensions.swift */; };
 		ECF3D82226C6526100BCEF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D82126C6526100BCEF10 /* AppDelegate.swift */; };
 		ECF3D82426C6526100BCEF10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D82326C6526100BCEF10 /* SceneDelegate.swift */; };
 		ECF3D82626C6526100BCEF10 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D82526C6526100BCEF10 /* WeatherViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC94F76626CD47A40085DEA5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECF3D81E26C6526100BCEF10 /* weatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF3D82126C6526100BCEF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF3D82326C6526100BCEF10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC94F76326CD478A0085DEA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC94F76626CD47A40085DEA5 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ECF3D81526C6526100BCEF10 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		ECF3D83A26C6536200BCEF10 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EC94F76326CD478A0085DEA5 /* Extensions */,
 				ECF3D82126C6526100BCEF10 /* AppDelegate.swift */,
 				ECF3D82326C6526100BCEF10 /* SceneDelegate.swift */,
 			);
@@ -192,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECF3D83C26C6549500BCEF10 /* NetworkManager.swift in Sources */,
+				EC94F76726CD47A40085DEA5 /* Extensions.swift in Sources */,
 				ECF3D82626C6526100BCEF10 /* WeatherViewController.swift in Sources */,
 				ECF3D82226C6526100BCEF10 /* AppDelegate.swift in Sources */,
 				ECF3D82426C6526100BCEF10 /* SceneDelegate.swift in Sources */,

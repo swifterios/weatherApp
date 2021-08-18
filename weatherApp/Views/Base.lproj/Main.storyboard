@@ -1171,6 +1171,34 @@
                         <outletCollection property="tempLabels" destination="9wa-fk-Qhs" collectionClass="NSMutableArray" id="HoG-An-joE"/>
                         <outletCollection property="tempLabels" destination="0Af-v9-7uH" collectionClass="NSMutableArray" id="JRa-Ra-81p"/>
                         <outletCollection property="tempLabels" destination="2BK-Hk-tOd" collectionClass="NSMutableArray" id="Adk-L3-rNM"/>
+                        <outletCollection property="daysLabels" destination="d5M-Ui-nuB" collectionClass="NSMutableArray" id="dfB-Jd-Re2"/>
+                        <outletCollection property="daysLabels" destination="I13-Pr-F8n" collectionClass="NSMutableArray" id="nuJ-1Z-6Q3"/>
+                        <outletCollection property="daysLabels" destination="Swy-yE-0bP" collectionClass="NSMutableArray" id="am6-gO-UiU"/>
+                        <outletCollection property="daysLabels" destination="2Vc-Az-vdD" collectionClass="NSMutableArray" id="J81-zL-iFy"/>
+                        <outletCollection property="daysLabels" destination="huy-P2-JHh" collectionClass="NSMutableArray" id="7tw-1W-BtP"/>
+                        <outletCollection property="daysLabels" destination="wZy-7y-ubZ" collectionClass="NSMutableArray" id="7ID-u8-wIW"/>
+                        <outletCollection property="daysLabels" destination="Svd-Sb-sjZ" collectionClass="NSMutableArray" id="XjV-h4-aJK"/>
+                        <outletCollection property="daysWeather" destination="Iff-Nr-ZV3" collectionClass="NSMutableArray" id="0G8-Ri-txo"/>
+                        <outletCollection property="daysWeather" destination="rJo-qr-7j4" collectionClass="NSMutableArray" id="ifi-ti-Blq"/>
+                        <outletCollection property="daysWeather" destination="FXi-Qj-TfC" collectionClass="NSMutableArray" id="qTt-f5-6J2"/>
+                        <outletCollection property="daysWeather" destination="JQO-Op-QC8" collectionClass="NSMutableArray" id="Egl-EL-lit"/>
+                        <outletCollection property="daysWeather" destination="12f-n8-1D1" collectionClass="NSMutableArray" id="YfO-TY-X7w"/>
+                        <outletCollection property="daysWeather" destination="7tK-fH-Ghy" collectionClass="NSMutableArray" id="Tkw-ds-gso"/>
+                        <outletCollection property="daysWeather" destination="Plc-MO-IRa" collectionClass="NSMutableArray" id="z8f-0L-ta9"/>
+                        <outletCollection property="daysDayTemp" destination="QfJ-RQ-71E" collectionClass="NSMutableArray" id="jnK-1g-TW7"/>
+                        <outletCollection property="daysNightTemp" destination="dOw-BC-7n0" collectionClass="NSMutableArray" id="Cgk-Cv-hCC"/>
+                        <outletCollection property="daysDayTemp" destination="q2b-iJ-NeY" collectionClass="NSMutableArray" id="6nk-Kc-7Ba"/>
+                        <outletCollection property="daysDayTemp" destination="GdW-FK-bKM" collectionClass="NSMutableArray" id="USs-ej-Hcr"/>
+                        <outletCollection property="daysDayTemp" destination="ZxB-sv-kET" collectionClass="NSMutableArray" id="vby-W4-6EK"/>
+                        <outletCollection property="daysDayTemp" destination="fQd-l8-vtu" collectionClass="NSMutableArray" id="52C-YT-PJy"/>
+                        <outletCollection property="daysDayTemp" destination="HHI-g4-NXJ" collectionClass="NSMutableArray" id="wgc-1B-BFN"/>
+                        <outletCollection property="daysDayTemp" destination="Cbm-Hb-Sse" collectionClass="NSMutableArray" id="ZL1-RM-dNe"/>
+                        <outletCollection property="daysNightTemp" destination="RUM-PX-ZgC" collectionClass="NSMutableArray" id="goh-l0-paF"/>
+                        <outletCollection property="daysNightTemp" destination="2Xm-WT-vwi" collectionClass="NSMutableArray" id="f1U-x4-VpJ"/>
+                        <outletCollection property="daysNightTemp" destination="FOE-Th-FHY" collectionClass="NSMutableArray" id="i7Z-1y-ccw"/>
+                        <outletCollection property="daysNightTemp" destination="i9P-Kr-50R" collectionClass="NSMutableArray" id="WBi-bi-M8y"/>
+                        <outletCollection property="daysNightTemp" destination="fm4-Br-FwZ" collectionClass="NSMutableArray" id="ftN-Qn-7hx"/>
+                        <outletCollection property="daysNightTemp" destination="EW9-KK-9mr" collectionClass="NSMutableArray" id="2Jg-Dh-j6y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

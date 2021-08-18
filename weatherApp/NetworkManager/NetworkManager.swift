@@ -25,7 +25,8 @@ final class NetworkManager {
         urlComponents.queryItems = [URLQueryItem(name: "lat", value: "50"),
                                     URLQueryItem(name: "lon", value: "50"),
                                     URLQueryItem(name: "lang", value: "ru_RU"),
-                                    URLQueryItem(name: "extra", value: "true")]
+                                    URLQueryItem(name: "extra", value: "true"),
+                                    URLQueryItem(name: "limit", value: "7")]
         guard let reqUrl = urlComponents.url else {
             return
         }

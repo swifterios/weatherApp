@@ -17,6 +17,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet var weatherImages: [UIImageView]!
     @IBOutlet var tempLabels: [UILabel]!
     
+    @IBOutlet var daysLabels: [UILabel]!
+    @IBOutlet var daysWeather: [UIImageView]!
+    @IBOutlet var daysDayTemp: [UILabel]!
+    @IBOutlet var daysNightTemp: [UILabel]!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,7 @@ class WeatherViewController: UIViewController {
             case .success(let model):
                 self?.weatherData = model
                 self?.updateHoursHourWeather()
+                self?.updateWeatherByDay()
             case .failure(let error):
                 print(error)
             }
@@ -143,6 +150,36 @@ class WeatherViewController: UIViewController {
                     skip = true
                 }
                 currentHour += 1
+            }
+        }
+    }
+    
+    
+    func updateWeatherByDay() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            guard let weatherData = self.weatherData else {
+                return
+            }
+            
+
+            
+            var daysTitles: [String] = []
+            
+            for index in 0...6 {
+                let dateString = weatherData.forecasts![index].date
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "ru_RU")
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let date = dateFormatter.date(from: dateString!)
+                dateFormatter.dateFormat = "EEEE"
+                
+                let day = dateFormatter.string(from: date!).capitalizingFirstLetter()
+                daysTitles.append(day)
+                self.daysLabels[index].text = day
             }
         }
     }
