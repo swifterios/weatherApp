@@ -56,11 +56,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             switch result {
             case .success(let model):
                 self?.weatherData = model
-                self?.updateMainInfo()
-                self?.updateHoursHourWeather()
-                self?.updateWeatherByDay()
-                self?.updateInfoDay()
-                self?.saveWeatherData(weatherData: model)
+                self?.updateUI()
+                self?.saveDataToUserDefaults(weatherData: model)
             case .failure(let error):
                 print(error)
             }
@@ -69,6 +66,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     
     //MARK: - Update UI
+    
+    func updateUI() {
+        self.updateMainInfo()
+        self.updateHoursHourWeather()
+        self.updateWeatherByDay()
+        self.updateInfoDay()
+    }
     
     func updateMainInfo() {
         DispatchQueue.main.async { [weak self] in
@@ -306,7 +310,35 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    // Location
+    //MARK: - UserDefaults
+    
+    func saveDataToUserDefaults(weatherData: Weather) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(weatherData)
+
+            UserDefaults.standard.set(data, forKey: "weatherData")
+        } catch {
+            print("Cant encode: (\(error))")
+        }
+    }
+    
+    func getDataFromUserDefaults(key: String) -> Weather? {
+        if let data = UserDefaults.standard.data(forKey: key) {
+            do {
+                let decoder = JSONDecoder()
+                let decodedData = try decoder.decode(Weather.self, from: data)
+                return decodedData
+            }
+            catch {
+                print("Cant decode: \(error)")
+            }
+        }
+        return nil
+    }
+    
+    //MARK: - Location func
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
@@ -321,17 +353,14 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error")
-    }
-    
-    func saveWeatherData(weatherData: Weather) {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(weatherData)
-
-            UserDefaults.standard.set(data, forKey: "weatherData")
-        } catch {
-            print("Cant encode: (\(error))")
+        guard let data = getDataFromUserDefaults(key: "weatherData") else {
+            return
         }
+        
+        weatherData = data
+        
+        updateUI()
+        
         
     }
 }
