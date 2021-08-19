@@ -49,7 +49,7 @@ struct Fact: Codable {
     let feels_like: Int?
     let icon: String?
     let condition: String?
-    let cloudness: Int?
+    let cloudness: Double?
     let wind_speed: Double?
     let pressure_mm: Int?
     let pressure_pa: Int?

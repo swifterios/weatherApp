@@ -60,7 +60,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 self?.updateHoursHourWeather()
                 self?.updateWeatherByDay()
                 self?.updateInfoDay()
-                
+                self?.saveWeatherData(weatherData: model)
             case .failure(let error):
                 print(error)
             }
@@ -321,6 +321,18 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error")
+    }
+    
+    func saveWeatherData(weatherData: Weather) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(weatherData)
+
+            UserDefaults.standard.set(data, forKey: "weatherData")
+        } catch {
+            print("Cant encode: (\(error))")
+        }
+        
     }
 }
 
