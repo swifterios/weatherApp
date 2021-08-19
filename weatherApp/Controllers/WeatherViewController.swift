@@ -81,13 +81,22 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             
-            guard let weatherData = self.weatherData else {
+            guard let weatherData = self.weatherData,
+                  let geoObject = weatherData.geo_object,
+                  let country = geoObject.country,
+                  let province = geoObject.province,
+                  let countryName = country.name,
+                  let provinceName = province.name,
+                  let fact = weatherData.fact,
+                  let condition = fact.condition,
+                  let factTemp = fact.temp
+                  else {
                 return
             }
             
-            self.countryLabel.text = String(weatherData.geo_object!.country!.name!) + ", " + String(weatherData.geo_object!.province!.name!)
-            self.currentWeatherLabel.text = self.getWeatherName(weatherName: weatherData.fact!.condition!)
-            self.currentTemp.text = String(weatherData.fact!.temp!) + "°"
+            self.countryLabel.text = String(countryName) + ", " + String(provinceName)
+            self.currentWeatherLabel.text = self.getWeatherName(weatherName: condition)
+            self.currentTemp.text = String(factTemp) + "°"
         }
     }
     
@@ -97,7 +106,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             
-            guard let weatherData = self.weatherData else {
+            guard let weatherData = self.weatherData,
+                  let forecasts = weatherData.forecasts
+                  else {
                 return
             }
             
@@ -109,11 +120,11 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             }()
             var currentDay = 0
             
-            guard var sunrise = weatherData.forecasts![currentDay].sunrise else {
+            guard var sunrise = forecasts[currentDay].sunrise else {
                 return
             }
             
-            guard var sunset = weatherData.forecasts![currentDay].sunset else {
+            guard var sunset = forecasts[currentDay].sunset else {
                 return
             }
             
@@ -138,15 +149,16 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 if currentHour >= 24 {
                     currentHour = 0
                     currentDay += 1
-                    sunrise = weatherData.forecasts![currentDay].sunrise!
-                    sunset = weatherData.forecasts![currentDay].sunset!
+                    sunrise = forecasts[currentDay].sunrise!
+                    sunset = forecasts[currentDay].sunset!
                 }
                 
-                guard let temp = weatherData.forecasts![currentDay].hours![currentHour].temp else {
+                guard let hours = forecasts[currentDay].hours,
+                    let temp = hours[currentHour].temp else {
                     return
                 }
                     
-                self.hoursLabels[index].text = weatherData.forecasts![currentDay].hours![currentHour].hour
+                self.hoursLabels[index].text = hours[currentHour].hour
                 self.tempLabels[index].text = String(temp) + "°"
                 
                 if index == 0 {
@@ -154,7 +166,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
                 // Update image
-                guard let weather = weatherData.forecasts![currentDay].hours![currentHour].condition else {
+                guard let weather = hours[currentHour].condition else {
                     return
                 }
                 
@@ -188,13 +200,20 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             
-            guard let weatherData = self.weatherData else {
+            guard let weatherData = self.weatherData,
+                  let forecasts = weatherData.forecasts else {
                 return
             }
             
 
             for index in 0...6 {
                 // Update day
+                
+                guard let parts = forecasts[index].parts,
+                      let partsDay = parts.day,
+                      let partsNight = parts.night else {
+                    return
+                }
                 
                 let dateString = weatherData.forecasts![index].date
                 let dateFormatter = DateFormatter()
@@ -209,12 +228,12 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 
                 // Update temp
                 
-                self.daysDayTemp[index].text = String(weatherData.forecasts![index].parts!.day!.temp_avg!) + "°"
-                self.daysNightTemp[index].text = String(weatherData.forecasts![index].parts!.night!.temp_avg!) + "°"
+                self.daysDayTemp[index].text = String(partsDay.temp_avg!) + "°"
+                self.daysNightTemp[index].text = String(partsNight.temp_avg!) + "°"
                 
                 // Update weather image
                 
-                guard let weather = weatherData.forecasts![index].parts!.day!.condition else {
+                guard let weather = partsDay.condition else {
                     return
                 }
                 
@@ -229,17 +248,21 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             
-            guard let weatherData = self.weatherData else {
+            guard let weatherData = self.weatherData,
+                  let forecasts = weatherData.forecasts,
+                  let parts = forecasts[0].parts,
+                  let partsDay = parts.day,
+                  let fact = weatherData.fact else {
                 return
             }
             
-            self.sunriseLabel.text = weatherData.forecasts![0].sunrise
-            self.sunsetLabel.text = weatherData.forecasts![0].sunset
-            self.humidityLabel.text = String(weatherData.fact!.humidity!) + "%"
-            self.windSpeedLabel.text = String(weatherData.fact!.wind_speed!) + " м/c"
-            self.feelLikeLabel.text = String(weatherData.fact!.feels_like!) + "°"
-            self.fallLabel.text = String(weatherData.forecasts![0].parts!.day!.prec_mm!) + " мм"
-            self.pressureLabel.text = String(weatherData.fact!.pressure_mm!) + " мм рт.ст"
+            self.sunriseLabel.text = forecasts[0].sunrise
+            self.sunsetLabel.text = forecasts[0].sunset
+            self.humidityLabel.text = String(fact.humidity!) + "%"
+            self.windSpeedLabel.text = String(fact.wind_speed!) + " м/c"
+            self.feelLikeLabel.text = String(fact.feels_like!) + "°"
+            self.fallLabel.text = String(partsDay.prec_mm!) + " мм"
+            self.pressureLabel.text = String(fact.pressure_mm!) + " мм рт.ст"
         }
     }
     
