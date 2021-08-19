@@ -14,10 +14,11 @@ final class NetworkManager {
     struct Constants {
         static let host = "api.weather.yandex.ru"
         static let apiPath = "/v2/forecast"
-        static let apiKey = "c3549142-e067-4afe-976c-dd68c446f656"
+        static let apiKey = "0dd40c8c-ec22-48fa-843a-f0bbad027cb2" // c3549142-e067-4afe-976c-dd68c446f656
     }
     
-    public func getWeather(lat: String, lon: String ,completion: @escaping (Result<Weather, Error>) -> Void) {
+    public func getWeather(lat: String, lon: String, completion: @escaping (Result<Weather, Error>) -> Void) {
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = Constants.host
@@ -27,9 +28,11 @@ final class NetworkManager {
                                     URLQueryItem(name: "lang", value: "ru_RU"),
                                     URLQueryItem(name: "extra", value: "true"),
                                     URLQueryItem(name: "limit", value: "7")]
+        
         guard let reqUrl = urlComponents.url else {
             return
         }
+        
         var request = URLRequest(url: reqUrl)
         request.httpMethod = "GET"
         request.addValue(Constants.apiKey, forHTTPHeaderField: "X-Yandex-API-Key")

@@ -17,8 +17,8 @@ struct Weather: Codable {
 }
 
 struct Info: Codable {
-    let lat: Int?
-    let lon: Int?
+    let lat: Double?
+    let lon: Double?
     let tzinfo: TzInfo?
 }
 
@@ -86,6 +86,6 @@ struct DayPart: Codable {
     let pressure_mm: Int?
     let wind_speed: Double?
     let feels_like: Int?
-    let prec_mm: Int?
+    let prec_mm: Double?
     let humidity: Int?
 }

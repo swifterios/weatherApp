@@ -8,9 +8,10 @@
 import UIKit
 import CoreLocation
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     var weatherData: Weather?
+    let manager = CLLocationManager()
     
     //MARK: - Outlets
     
@@ -37,29 +38,16 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getUserLocation()
     }
     
-    func getUserLocation() {
-        let manager = CLLocationManager()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        if CLLocationManager.locationServicesEnabled() {
-            switch manager.authorizationStatus {
-            case .restricted, .denied:
-                print("denied")
-                return
-            default:
-                guard let currentLocation = manager.location else {
-                    return
-                }
-                let lat = String(currentLocation.coordinate.latitude)
-                let lon = String(currentLocation.coordinate.longitude)
-                
-                getWeather(lat: lat, lon: lon)
-            }
-        }
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
+    
 
     //MARK: - Using api
     
@@ -92,7 +80,7 @@ class WeatherViewController: UIViewController {
                 return
             }
             
-            self.countryLabel.text = String(weatherData.geo_object!.country!.name!) + " , " + String(weatherData.geo_object!.province!.name!)
+            self.countryLabel.text = String(weatherData.geo_object!.country!.name!) + ", " + String(weatherData.geo_object!.province!.name!)
             self.currentWeatherLabel.text = self.getWeatherName(weatherName: weatherData.fact!.condition!)
             self.currentTemp.text = String(weatherData.fact!.temp!) + "°"
         }
@@ -316,6 +304,23 @@ class WeatherViewController: UIViewController {
         default:
             return ""
         }
+    }
+    
+    // Location
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            manager.stopUpdatingLocation()
+            
+            let latitude = String(format: "%f", location.coordinate.latitude)
+            let longitude = String(format: "%f", location.coordinate.longitude)
+            
+            getWeather(lat: latitude, lon: longitude)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error")
     }
 }
 
