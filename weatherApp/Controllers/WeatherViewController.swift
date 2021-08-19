@@ -38,16 +38,16 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidDisappear(animated)
         
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
     }
-    
 
     //MARK: - Using api
     
@@ -60,6 +60,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 self?.saveDataToUserDefaults(weatherData: model)
             case .failure(let error):
                 print(error)
+                self?.updateWithUserDefaults()
             }
         }
     }
@@ -310,6 +311,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    
     //MARK: - UserDefaults
     
     func saveDataToUserDefaults(weatherData: Weather) {
@@ -337,22 +339,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         return nil
     }
     
-    //MARK: - Location func
-    
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            manager.stopUpdatingLocation()
-            
-            let latitude = String(format: "%f", location.coordinate.latitude)
-            let longitude = String(format: "%f", location.coordinate.longitude)
-            
-            getWeather(lat: latitude, lon: longitude)
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error")
+    func updateWithUserDefaults() {
         guard let data = getDataFromUserDefaults(key: "weatherData") else {
             return
         }
@@ -360,8 +347,28 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         weatherData = data
         
         updateUI()
+    }
+    
+    
+    //MARK: - Location
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            
+            let latitude = String(format: "%f", location.coordinate.latitude)
+            let longitude = String(format: "%f", location.coordinate.longitude)
+            
+            manager.stopUpdatingLocation()
+            
+            getWeather(lat: latitude, lon: longitude)
+            
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to get location")
         
-        
+        updateWithUserDefaults()
     }
 }
 
