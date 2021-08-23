@@ -8,11 +8,18 @@
  - Пролистывания экрана и элементов
  - Не использованы сторонние библиотеки (по требованию)
 
+<p align="center">
+  <img width="300" src="https://i.imgur.com/X7uAdvn.png">
+</p>
 
-<img src="https://i.imgur.com/X7uAdvn.png" width="200" />
+<p align="center">
+  <img width="300" src="https://i.imgur.com/elde0Cz.png">
+</p>
 
-<img src="https://i.imgur.com/elde0Cz.png" width="200" />
+<p align="center">
+  <img width="300" src="https://i.imgur.com/1klp4SJ.png">
+</p>
 
-<img src="https://i.imgur.com/1klp4SJ.png" width="200" />
-
-<img src="https://i.imgur.com/folNh9k.png" width="200" />
+<p align="center">
+  <img width="300" src="https://i.imgur.com/folNh9k.png">
+</p>
